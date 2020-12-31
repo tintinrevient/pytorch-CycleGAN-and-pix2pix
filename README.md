@@ -116,6 +116,8 @@ bash ./datasets/download_cyclegan_dataset.sh maps
 ```bash
 #!./scripts/train_cyclegan.sh
 python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
+
+python train.py --dataroot ./datasets/horse2zebra --name horse2zebra_cyclegan --model cycle_gan --gpu_ids -1
 ```
 To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
 - Test the model:
