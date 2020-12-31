@@ -112,6 +112,11 @@ cd pytorch-CycleGAN-and-pix2pix
 bash ./datasets/download_cyclegan_dataset.sh maps
 ```
 - To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
+```
+ps -fA | grep python
+kill 81651
+```
+
 - Train a model:
 ```bash
 #!./scripts/train_cyclegan.sh
