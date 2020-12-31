@@ -112,9 +112,16 @@ cd pytorch-CycleGAN-and-pix2pix
 bash ./datasets/download_cyclegan_dataset.sh maps
 ```
 - To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
+When the port is preoccupied:
 ```
 ps -fA | grep python
 kill 81651
+```
+
+When visdom is not installed by conda: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/1182
+```
+conda install -c conda-forge visdom
+conda install -c conda-forge jsonpatch
 ```
 
 - Train a model:
