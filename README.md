@@ -107,38 +107,37 @@ cd pytorch-CycleGAN-and-pix2pix
   - For Repl users, please click [![Run on Repl.it](https://repl.it/badge/github/junyanz/pytorch-CycleGAN-and-pix2pix)](https://repl.it/github/junyanz/pytorch-CycleGAN-and-pix2pix).
 
 ### CycleGAN train/test
-Download a CycleGAN dataset (e.g. maps):
+* Download a CycleGAN dataset (e.g. maps):
 ```bash
 bash ./datasets/download_cyclegan_dataset.sh maps
 ```
-
-To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
-- When the port is preoccupied:
+* To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
+  * When the port is preoccupied:
 ```
 ps -fA | grep python
 kill 81651
 ```
-- When visdom is not installed by conda: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/1182
+  * When visdom is not installed by conda: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/1182
 ```
 conda install -c conda-forge visdom
 conda install -c conda-forge jsonpatch
 ```
 
-Train a model:
+* Train a model:
+  * To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
 ```bash
 #!./scripts/train_cyclegan.sh
 python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
 
 python train.py --dataroot ./datasets/horse2zebra --name horse2zebra_cyclegan --model cycle_gan --gpu_ids -1
 ```
-To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
 
-Test the model:
+* Test the model:
+  * The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
 ```bash
 #!./scripts/test_cyclegan.sh
 python test.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
 ```
-- The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
 
 ### pix2pix train/test
 - Download a pix2pix dataset (e.g.[facades](http://cmp.felk.cvut.cz/~tylecr1/facade/)):
