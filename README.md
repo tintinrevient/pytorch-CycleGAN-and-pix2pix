@@ -128,7 +128,6 @@ conda install -c conda-forge jsonpatch
 ```bash
 #!./scripts/train_cyclegan.sh
 python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
-
 python train.py --dataroot ./datasets/horse2zebra --name horse2zebra_cyclegan --model cycle_gan --gpu_ids -1
 ```
 
@@ -174,6 +173,7 @@ bash ./datasets/download_cyclegan_dataset.sh horse2zebra
 - Then generate the results using
 ```bash
 python test.py --dataroot datasets/horse2zebra/testA --name horse2zebra_pretrained --model test --no_dropout
+python test.py --dataroot datasets/horse2zebra/testA --name horse2zebra_pretrained --model test --no_dropout --gpu_ids -1
 ```
 - The option `--model test` is used for generating results of CycleGAN only for one side. This option will automatically set `--dataset_mode single`, which only loads the images from one set. On the contrary, using `--model cycle_gan` requires loading and generating results in both directions, which is sometimes unnecessary. The results will be saved at `./results/`. Use `--results_dir {directory_path_to_save_result}` to specify the results directory.
 
