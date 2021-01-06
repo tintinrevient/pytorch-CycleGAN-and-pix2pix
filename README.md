@@ -112,20 +112,19 @@ cd pytorch-CycleGAN-and-pix2pix
 bash ./datasets/download_cyclegan_dataset.sh maps
 ```
 * To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
-  * When the port is preoccupied:
+* When the port is preoccupied:
 ```
 ps -fA | grep python
 kill 81651
 ```
-
-  * When visdom is not installed by conda: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/1182
+* When visdom is not installed by conda: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/1182
 ```
 conda install -c conda-forge visdom
 conda install -c conda-forge jsonpatch
 ```
 
 * Train a model:
-  * To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
+* To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
 ```bash
 #!./scripts/train_cyclegan.sh
 python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
@@ -134,7 +133,7 @@ python train.py --dataroot ./datasets/horse2zebra --name horse2zebra_cyclegan --
 ```
 
 * Test the model:
-  * The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
+* The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
 ```bash
 #!./scripts/test_cyclegan.sh
 python test.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
