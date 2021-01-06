@@ -117,6 +117,7 @@ bash ./datasets/download_cyclegan_dataset.sh maps
 ps -fA | grep python
 kill 81651
 ```
+
   * When visdom is not installed by conda: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/1182
 ```
 conda install -c conda-forge visdom
